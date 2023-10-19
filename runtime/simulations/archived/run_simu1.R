@@ -320,11 +320,11 @@ for(i in c(26:30, 32:36, 44:48, 50:54)) {
 	fdr.mthd[i, ] = colMeans(forOut)[c(1:4,9,11)]
 	etp.mthd[i, ] = colMeans(forOut)[c(5:8,10,12)]
 
-	str = paste('./simu1_prl', i, 'm', m, Sys.time(), '.Rdata', sep='_')
+	str = paste('./simu1', i, 'm', m, Sys.time(), '.Rdata', sep='_')
 	save(fdr.mthd, etp.mthd, file = str)
 }
 
-str = paste('./simu1_prl', 'm', m, 'nrep', nrep, Sys.time(), '.Rdata', sep='_')
+str = paste('./simu1', 'm', m, 'nrep', nrep, Sys.time(), '.Rdata', sep='_')
 save(fdr.mthd, etp.mthd, file = str)
 
 

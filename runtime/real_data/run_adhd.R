@@ -1,50 +1,10 @@
 library(splines)
 library(CAMT)
-library(R.matlab)
-library(abind)
-library(readr)
-library(reticulate)
 library(rhoBH)
 
 registerDoParallel(50)
 
-numpy = import('numpy')
-
-dt_train = numpy$load ('./data/dt_train_swssd.npy')
-dt_test = numpy$load  ('./data/dt_test_swssd.npy')
-label_train = read_csv('./data/label_for_train.csv', col_names = FALSE)
-label_test = read_csv ('./data/label_for_test.csv', col_names = FALSE)
-dt_all = abind(dt_train, dt_test, along = 1)
-label_all = abind(label_train, label_test, along = 1)
-
-x1 = dt_all[which(label_all==0), , , ]
-x2 = dt_all[which(label_all==1), , , ]
-n1 = dim(x1)[1]
-n2 = dim(x2)[1]
-var1 = apply(x1, 2:4, var)
-x12 = apply(x1, 2:4, mean)
-var2 = apply(x2, 2:4, var)
-x22 = apply(x2, 2:4, mean)
-
-x_d = x12 - x22
-x_t = x12 - x22
-x_t[which(x_t!=0, arr.ind=T)] = x_d[which(x_t!=0, arr.ind=T)]/sqrt(var1[which(x_t!=0, arr.ind=T)]/n1 + var2[which(x_t!=0, arr.ind=T)]/n2)
-
-dims = dim(x_t)
-m = prod(dims)
-z_values = rep(0, m)
-s_aux = matrix(0, m, 3)
-cnts = 0
-
-for(i in 1:dims[1]) {
-    for(j in 1:dims[2]) {
-        for(k in 1:dims[3]) {
-            cnts = cnts + 1
-            z_values[cnts] = x_t[i,j,k]
-            s_aux[cnts,] = c(i,j,k)
-        }
-    }
-}
+load("./data/ADHD_data.Rdata")
 
 temp_aux = ns(s_aux, 6)
 pvals = 2*pnorm(-abs(z_values), 0, 1)

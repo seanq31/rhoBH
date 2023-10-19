@@ -132,11 +132,11 @@ for(i in 1:np) {
 	fdr1.mthd[i, ] = colMeans(forOut)[1:7]
 	etp1.mthd[i, ] = colMeans(forOut)[8:14]
 
-	str = paste('./simu2_prl_mid', i, Sys.time(), '.Rdata', sep='_')
+	str = paste('./simu2_mid', i, Sys.time(), '.Rdata', sep='_')
 	save(fdr1.mthd, etp1.mthd, file = str)
 }
 
-str = paste('./simu2_prl_mid', 'm', m, 'nrep', nrep, Sys.time(), '.Rdata', sep='_')
+str = paste('./simu2_mid', 'm', m, 'nrep', nrep, Sys.time(), '.Rdata', sep='_')
 save(fdr1.mthd, etp1.mthd, file = str)
 
 
@@ -259,12 +259,12 @@ for(i in 1:np) {
 	fdr2.mthd[i, ] = colMeans(forOut)[1:7]
 	etp2.mthd[i, ] = colMeans(forOut)[8:14]
 
-	str = paste('./simu2_prl_both', i, Sys.time(), '.Rdata', sep='_')
+	str = paste('./simu2_both', i, Sys.time(), '.Rdata', sep='_')
 	save(fdr1.mthd, etp1.mthd, fdr2.mthd, etp2.mthd, file = str)
 }
 
 
-str = paste('./simu2_prl_both', 'm', m, 'nrep', nrep, Sys.time(), '.Rdata', sep='_')
+str = paste('./simu2_both', 'm', m, 'nrep', nrep, Sys.time(), '.Rdata', sep='_')
 save(fdr1.mthd, etp1.mthd, fdr2.mthd, etp2.mthd, file = str)
 
 
