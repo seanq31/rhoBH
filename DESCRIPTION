@@ -1,0 +1,12 @@
+Package: rhoBH
+Type: Package
+Title: Rho-BH Procedure
+Version: 0.1.0
+Author: Shenghao Qin, Bowen Gang, Yin Xia
+Maintainer: Shenghao Qin <shqin23@m.fudan.edu.cn>
+Description: Implmentation the rho-BH procedure proposed in XXXX with null distribution fixed to be N(0,1).
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Depends: doParallel, foreach, parallel, mvnfast
+RoxygenNote: 7.2.3
