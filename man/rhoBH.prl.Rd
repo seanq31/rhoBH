@@ -2,7 +2,7 @@
 % Please edit documentation in R/funcs.R
 \name{rhoBH.prl}
 \alias{rhoBH.prl}
-\title{A parellel computing version of rho.BH utilizing foreach function.}
+\title{A parallel computing version of rho.BH utilizing foreach function.}
 \usage{
 rhoBH.prl(x, s_aux1, s_aux2, q, mu0 = 0, sig0 = 1)
 }

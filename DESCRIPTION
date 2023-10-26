@@ -1,10 +1,10 @@
 Package: rhoBH
 Type: Package
-Title: Rho-BH Procedure
+Title: The (weighted) Rho-BH Procedures
 Version: 0.1.0
-Author: 
+Author: Bowen Gang, Shenghao Qin, Yin Xia
 Maintainer: Shenghao Qin <shqin23@m.fudan.edu.cn>
-Description: Implmentation the rho-BH procedure proposed in XXXX with null distribution fixed to be N(0,1).
+Description: Implmentation the (weighted) rho-BH procedures with null distribution fixed to be N(0,1).
 License: GPL-2
 Encoding: UTF-8
 LazyData: true

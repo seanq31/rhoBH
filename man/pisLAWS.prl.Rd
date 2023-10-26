@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{pisLAWS.prl}
 \alias{pisLAWS.prl}
-\title{A parellel computing version of pisLAWS utilizing foreach function.}
+\title{A parallel computing version of pisLAWS utilizing foreach function.}
 \usage{
 pisLAWS.prl(s1, pv2, s2, tau = 0.1, h = 0.3)
 }
@@ -21,5 +21,5 @@ pisLAWS.prl(s1, pv2, s2, tau = 0.1, h = 0.3)
 Estimated non-null probability for each covariate in s1.
 }
 \description{
-A parellel computing version of pisLAWS utilizing foreach function.
+A parallel computing version of pisLAWS utilizing foreach function.
 }
